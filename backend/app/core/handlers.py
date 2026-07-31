@@ -9,14 +9,17 @@ async def vibraa_exception_handler(
     request: Request,
     exc: VibraaException,
 ):
-    logger.error(exc.message)
+    logger.error(
+        "VibraaException: %s",
+        exc.message,
+    )
 
     return JSONResponse(
-        status_code=400,
+        status_code=exc.status_code,
         content={
             "success": False,
             "error": {
-                "message": exc.message
-            }
+                "message": exc.message,
+            },
         },
     )
