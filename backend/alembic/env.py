@@ -3,6 +3,7 @@ from app.db.database import Base
 from app.models.playlist import Playlist
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+from app.models.user import User
 
 from alembic import context
 

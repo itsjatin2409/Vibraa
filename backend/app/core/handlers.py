@@ -10,7 +10,7 @@ async def vibraa_exception_handler(
     exc: VibraaException,
 ):
     logger.error(
-        "VibraaException: %s",
+        "Application error: %s",
         exc.message,
     )
 
